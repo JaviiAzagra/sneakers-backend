@@ -5,32 +5,37 @@ const connectDb = require("../database/db");
 const hoodies = [
     {
         brand: "Heron Preston",
-        model: "Heron Watercolor Print Crewneck Sweatshirt",
+        model: "Crewneck Sweatshirt",
         collaboration: "",
+        price: 200,
         img: "https://images.stockx.com/images/Heron-Preston-Heron-Watercolor-Print-Crewneck-Sweatshirt-Black.jpg?fit=fill&bg=FFFFFF&w=576&h=384&fm=avif&auto=compress&dpr=1&trim=color&updated_at=1634740478&q=57"
     },
     {
         brand: "Supreme",
         model: "Label Hooded Sweatshirt",
         collaboration: "Champion",
+        price: 320,
         img: "https://images.stockx.com/images/Supreme-Champion-Label-Hooded-Sweatshirt-Olive.jpg?fit=fill&bg=FFFFFF&w=576&h=384&fm=avif&auto=compress&dpr=1&trim=color&updated_at=1613351920&q=57"
     },
     {
         brand: "Stone Island",
-        model: "Brushed Cotton Fleece Crewneck",
+        model: "Fleece Crewneck",
         collaboration: "",
+        price: 300,
         img: "https://images.stockx.com/images/Stone-Island-63020-Brushed-Cotton-Fleece-Crewneck-Antique-Rose.jpg?fit=fill&bg=FFFFFF&w=576&h=384&fm=avif&auto=compress&dpr=1&trim=color&updated_at=1637372936&q=57"
     },
     {
         brand: "Palm Angels",
         model: "Bear Hoodie",
         collaboration: "",
+        price: 600,
         img: "https://images.stockx.com/images/Palm-Angels-Bear-Hoodie-Hoodie-Black-Multi.jpg?fit=fill&bg=FFFFFF&w=576&h=384&fm=avif&auto=compress&dpr=1&trim=color&updated_at=1644511033&q=57"
     },
     {
         brand: "Stussy",
         model: "Basic Hoodie Black",
         collaboration: "",
+        price: 200,
         img: "https://images.stockx.com/images/Stussy-Basic-Hoodie-Black-v2.jpg?fit=fill&bg=FFFFFF&w=576&h=384&fm=avif&auto=compress&dpr=1&trim=color&updated_at=1666590407&q=57"
     },
 ]
