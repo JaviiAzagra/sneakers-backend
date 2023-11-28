@@ -10,8 +10,8 @@ const userSchema = new Schema(
     name: { type: String, required: true },
     surname: { type: String, required: true },
     username: { type: String, unique: true, trim: true },
-    img: { type: String, required: true },
-    rol: { type: String, enum: ["teachers", "education student", "other"] },
+    /* img: { type: String, required: true },
+    rol: { type: String, enum: ["teachers", "education student", "other"] }, */
   },
   {
     timestamps: true,
