@@ -35,9 +35,9 @@ server.use(express.json({ limit: "5mb" }));
 server.use(express.urlencoded({ extended: false }));
 
 server.use("/", indexRoutes);
+server.use("/users", userRoutes);
 server.use("/sneakers", sneakerRoutes);
 server.use("/hoodies", hoodieRoutes);
-server.use("/users", userRoutes);
 
 server.use("*", (req, res) => {
   const error = new Error("PATH NOT FOUND! 404");
