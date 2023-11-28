@@ -3,6 +3,7 @@ const { isAdmin, isAuth } = require("../middlewares/auth");
 const bcrypt = require("bcrypt");
 const { generateSign } = require("../../utils/jwt/jwt");
 const User = require("../models/users.model");
+const { uploadFile } = require("../middlewares/cloudinary");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
@@ -60,9 +61,12 @@ router.post("/logout", async (req, res, next) => {
   }
 });
 
-router.post("/create", async (req, res, next) => {
+router.post("/create", uploadFile.single("img"), async (req, res, next) => {
   try {
     const user = req.body;
+    if (req.file) {
+      user.img = req.file.path;
+    }
     const newUser = new User(user);
     const created = await newUser.save();
     return res
