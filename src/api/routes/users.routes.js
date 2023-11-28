@@ -61,16 +61,13 @@ router.post("/logout", async (req, res, next) => {
   }
 });
 
-router.post("/create", async (req, res, next) => {
+router.post("/create", async (req, res) => {
   try {
-    const user = req.body;
-    const newUser = new User(user);
-    const created = await newUser.save();
-    return res
-      .status(201)
-      .json({ message: "Se ha creado correctamente", created });
+    const newUser = new User(req.body);
+    const createdUser = await newUser.save();
+    return res.status(201).json(createdUser);
   } catch (error) {
-    return next(error);
+    return res.status(500).json("No se ha podido crear el usuario");
   }
 });
 
