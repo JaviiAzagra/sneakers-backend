@@ -32,7 +32,7 @@ server.use(
   })
 );
 
-server.use(express.json({ limit: "5mb" }));
+server.use(express.json({ limit: "20mb" }));
 server.use(express.urlencoded({ extended: false }));
 
 server.use("/", indexRoutes);
