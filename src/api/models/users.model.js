@@ -7,11 +7,11 @@ const userSchema = new Schema(
   {
     email: { type: String, required: true, unique: true, trim: true },
     password: { type: String, required: true },
-    rol: {
+    /* rol: {
       type: String,
       default: "other",
       enum: ["teachers", "education student", "other"],
-    },
+    }, */
   },
   {
     timestamps: true,
