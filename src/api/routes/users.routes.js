@@ -3,7 +3,6 @@ const { isAdmin, isAuth } = require("../middlewares/auth");
 const bcrypt = require("bcrypt");
 const { generateSign } = require("../../utils/jwt/jwt");
 const User = require("../models/users.model");
-const { uploadFile } = require("../middlewares/cloudinary");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
@@ -61,21 +60,11 @@ router.post("/logout", async (req, res, next) => {
   }
 });
 
-/* router.post("/create", async (req, res) => {
-  try {
-    const newUser = new User(req.body);
-    const createdUser = await newUser.save();
-    return res.status(201).json(createdUser);
-  } catch (error) {
-    return res.status(500).json("No se ha podido crear el usuario");
-  }
-}); */
-
 router.post("/create", async (req, res, next) => {
   try {
     const user = req.body;
     const newUser = new User(user);
-    if (newUser.rol === "other") {
+    if (newUser.rol === "patient") {
       const created = await newUser.save();
       return res.status(201).json(created);
     } else {
