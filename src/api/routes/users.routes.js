@@ -61,13 +61,28 @@ router.post("/logout", async (req, res, next) => {
   }
 });
 
-router.post("/create", async (req, res) => {
+/* router.post("/create", async (req, res) => {
   try {
     const newUser = new User(req.body);
     const createdUser = await newUser.save();
     return res.status(201).json(createdUser);
   } catch (error) {
     return res.status(500).json("No se ha podido crear el usuario");
+  }
+}); */
+
+router.post("/create", async (req, res, next) => {
+  try {
+    const user = req.body;
+    const newUser = new User(user);
+    if (newUser.rol === "other") {
+      const created = await newUser.save();
+      return res.status(201).json(created);
+    } else {
+      return res.status(500).json("You're not allowed to create admin account");
+    }
+  } catch (error) {
+    return next(error);
   }
 });
 
