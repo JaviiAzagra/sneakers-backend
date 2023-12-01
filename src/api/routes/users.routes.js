@@ -61,7 +61,7 @@ router.post("/logout", async (req, res, next) => {
   }
 });
 
-router.post("/create", async (req, res) => {
+/* router.post("/create", async (req, res) => {
   try {
     const newUser = new User(req.body);
     const createdUser = await newUser.save();
@@ -69,9 +69,9 @@ router.post("/create", async (req, res) => {
   } catch (error) {
     return res.status(500).json("No se ha podido crear el usuario");
   }
-});
+}); */
 
-/* router.post("/create", async (req, res, next) => {
+router.post("/create", async (req, res, next) => {
   try {
     const user = req.body;
     const newUser = new User(user);
@@ -84,7 +84,7 @@ router.post("/create", async (req, res) => {
   } catch (error) {
     return next(error);
   }
-}); */
+});
 
 router.delete("/delete/:id", [isAdmin], async (req, res, next) => {
   try {
