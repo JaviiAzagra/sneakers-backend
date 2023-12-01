@@ -10,7 +10,7 @@ const userSchema = new Schema(
     rol: {
       type: String,
       default: "other",
-      enum: ["teachers", "education student", "other"],
+      enum: ["teachers", "education-student", "other"],
     },
   },
   {
