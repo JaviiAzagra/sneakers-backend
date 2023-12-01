@@ -11,6 +11,9 @@ const profilesSchema = new Schema(
       trim: true,
       enum: ["undefined", "male", "female"],
     },
+    name: { type: String, required: true },
+    surname: { type: String, required: true },
+    username: { type: String, unique: true, trim: true },
   },
   {
     timestamps: true,
