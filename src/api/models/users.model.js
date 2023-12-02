@@ -36,9 +36,9 @@ const userSchema = new Schema(
   {
     email: { type: String, required: true, unique: true, trim: true },
     password: { type: String, required: true },
-    name: { type: String, required: true },
-    surname: { type: String, required: true },
-    username: { type: String, unique: true, trim: true },
+    /* name: { type: String },
+    surname: { type: String },
+    username: { type: String, unique: true, trim: true }, */
     rol: {
       type: String,
       default: "other",
