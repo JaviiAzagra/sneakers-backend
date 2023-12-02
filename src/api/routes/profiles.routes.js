@@ -2,11 +2,12 @@ const express = require("express");
 const { isAuth } = require("../middlewares/auth");
 const { uploadFile, deleteFile } = require("../middlewares/cloudinary");
 const Profile = require("../models/profiles.model");
+const { populate } = require("../models/users.model");
 const router = express.Router();
 
 router.get("/", async (req, res, next) => {
   try {
-    const allProfiles = await Profile.find();
+    const allProfiles = await Profile.find().lean().populate("user");
     return res.status(200).json(allProfiles);
   } catch (error) {
     return next(error);
