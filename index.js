@@ -41,11 +41,11 @@ server.use("/profiles", profileRoutes);
 /* server.use("/sneakers", sneakerRoutes);
 server.use("/hoodies", hoodieRoutes); */
 
-/* server.use("*", (req, res) => {
+server.use("*", (req, res) => {
   const error = new Error("PATH NOT FOUND! 404");
   error.status = 404;
   return res.status(error.status).json(error.message);
-}); */
+});
 
 server.use((error, req, res, next) => {
   return res
