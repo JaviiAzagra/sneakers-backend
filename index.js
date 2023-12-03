@@ -8,8 +8,8 @@ const db = require("./src/utils/database/db");
 const server = express();
 
 const indexRoutes = require("./src/api/routes/index.routes");
-/* const sneakerRoutes = require("./src/api/routes/sneakers.routes");
-const hoodieRoutes = require("./src/api/routes/hoodies.routes"); */
+const sneakerRoutes = require("./src/api/routes/sneakers.routes");
+const hoodieRoutes = require("./src/api/routes/hoodies.routes");
 const userRoutes = require("./src/api/routes/users.routes");
 const profileRoutes = require("./src/api/routes/profiles.routes");
 
@@ -38,8 +38,8 @@ server.use(express.urlencoded({ extended: false }));
 server.use("/", indexRoutes);
 server.use("/users", userRoutes);
 server.use("/profiles", profileRoutes);
-/* server.use("/sneakers", sneakerRoutes);
-server.use("/hoodies", hoodieRoutes); */
+server.use("/sneakers", sneakerRoutes);
+server.use("/hoodies", hoodieRoutes);
 
 server.use("*", (req, res) => {
   const error = new Error("PATH NOT FOUND! 404");
