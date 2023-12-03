@@ -27,8 +27,7 @@ connectDb();
 
 server.use(
   cors({
-    origin: "*",
-    credentials: true,
+    origin: "https://www.mestrecabreta.com",
   })
 );
 

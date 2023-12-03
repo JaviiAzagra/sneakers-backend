@@ -1,5 +1,5 @@
 const express = require("express");
-const { isAuth } = require("../middlewares/auth");
+const { isAdmin, isAuth } = require("../middlewares/auth");
 const { uploadFile, deleteFile } = require("../middlewares/cloudinary");
 const Profile = require("../models/profiles.model");
 const { populate } = require("../models/users.model");
@@ -55,7 +55,7 @@ router.post(
   }
 );
 
-router.delete("/delete/:id", async (req, res, next) => {
+router.delete("/delete/:id", [isAdmin], async (req, res, next) => {
   try {
     const id = req.params.id;
     const profile = await Profile.findById(id);
