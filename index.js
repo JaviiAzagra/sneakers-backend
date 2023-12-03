@@ -27,7 +27,10 @@ connectDb();
 
 server.use(
   cors({
-    origin: "https://www.mestrecabreta.com",
+    origin: [
+      "https://www.mestrecabreta.com",
+      "https://four-corners-rho.vercel.app",
+    ],
   })
 );
 
