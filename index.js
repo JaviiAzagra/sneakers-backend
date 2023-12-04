@@ -30,6 +30,7 @@ server.use(
     origin: [
       "https://www.mestrecabreta.com",
       "https://four-corners-rho.vercel.app",
+      "http://localhost:3000",
     ],
   })
 );
