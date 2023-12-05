@@ -16,10 +16,10 @@ const profilesSchema = new Schema(
     username: { type: String, unique: true, trim: true },
     birthDate: { type: Date, required: true },
     user: [{ type: mongoose.Types.ObjectId, ref: "users", required: true }],
-  },
-  {
-    timestamps: true,
   }
+  /* {
+    timestamps: true,
+  } */
 );
 
 const Profile = mongoose.model("profiles", profilesSchema);
