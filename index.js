@@ -12,6 +12,7 @@ const sneakerRoutes = require("./src/api/routes/sneakers.routes");
 const hoodieRoutes = require("./src/api/routes/hoodies.routes");
 const userRoutes = require("./src/api/routes/users.routes");
 const profileRoutes = require("./src/api/routes/profiles.routes");
+const commentRoutes = require("./src/api/routes/comments.routes");
 
 const DB_URL = process.env.DB_URL;
 const PORT = process.env.PORT;
@@ -43,6 +44,7 @@ server.use("/users", userRoutes);
 server.use("/profiles", profileRoutes);
 server.use("/sneakers", sneakerRoutes);
 server.use("/hoodies", hoodieRoutes);
+server.use("/comments", commentRoutes);
 
 server.use("*", (req, res) => {
   const error = new Error("PATH NOT FOUND! 404");
