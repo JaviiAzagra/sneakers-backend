@@ -13,7 +13,6 @@ const profilesSchema = new Schema(
     },
     name: { type: String, required: true },
     surname: { type: String, required: true },
-    username: { type: String, unique: true, trim: true },
     birthDate: { type: String, required: true },
     user: [{ type: mongoose.Types.ObjectId, ref: "users", required: true }],
   }
