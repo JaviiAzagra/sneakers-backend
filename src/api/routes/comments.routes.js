@@ -58,7 +58,7 @@ router.post("/create", async (req, res) => {
   }
 }); */
 
-router.delete("/delete:/id", async (req, res, next) => {
+router.delete("/delete/:id", async (req, res, next) => {
   try {
     const id = req.params.id;
     const commentToDelete = await Comment.findByIdAndDelete(id);
