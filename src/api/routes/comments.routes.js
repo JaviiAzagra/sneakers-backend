@@ -42,7 +42,7 @@ router.post("/create", async (req, res) => {
   }
 });
 
-router.delete("/delete/:id", async (req, res, next) => {
+/* router.delete("/delete/:id", async (req, res, next) => {
   try {
     const id = req.params.id;
     const comment = await Comment.findById(id);
@@ -53,6 +53,18 @@ router.delete("/delete/:id", async (req, res, next) => {
     return res
       .status(200)
       .json(`The 'comment' has been deleted --> ${commentToDelete}`);
+  } catch (error) {
+    return next(error);
+  }
+}); */
+
+router.delete("/delete:/id", async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    const commentToDelete = await Comment.findByIdAndDelete(id);
+    return res
+      .status(201)
+      .json({ message: "Eliminado correctamente", commentToDelete });
   } catch (error) {
     return next(error);
   }
