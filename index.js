@@ -26,16 +26,12 @@ cloudinary.config({
 /* db.connectDb(DB_URL); */
 connectDb();
 
-server.use(
-  cors({
-    origin: [
-      "https://www.mestrecabreta.com",
-      "https://four-corners-rho.vercel.app",
-      "http://localhost:3000",
-      "http://localhost:4321",
-    ],
-  })
-);
+server.use(cors({
+    origin: '*', 
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
+    allowedHeaders: ['Content-Type', 'Authorization'], 
+    credentials: false 
+}));
 
 server.use(express.json({ limit: "20mb" }));
 server.use(express.urlencoded({ extended: false }));
