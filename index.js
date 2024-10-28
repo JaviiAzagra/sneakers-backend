@@ -32,6 +32,7 @@ server.use(
       "https://www.mestrecabreta.com",
       "https://four-corners-rho.vercel.app",
       "http://localhost:3000",
+      "http://localhost:4321",
     ],
   })
 );
